@@ -1,21 +1,38 @@
+import axios from './axios.js';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Video from './Video';
 
-function App() {
+function App() {  
+
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    async function fetchPost()  {
+      const response = await axios.get('/v2/posts')
+      setVideos(response.data);
+    }
+
+    fetchPost();
+  }, []);
+  console.log(videos)
   return (
     <div className="app">
       <div className="app__videos">
-        <Video url='"https://assets.mixkit.co/videos/preview/mixkit-model-girl-posing-on-a-white-background-34428-large.mp4"'
-        channel={"Testing 123"}
-        description={"Testing 123"}
-        song={"Testing 123"}
-        likes={"Testing 123"}
-        messages={"Testing 123"}
-        shares={"Testing 123"} />
-      </div>
-      
-      {/* videos */}
-      {/*  */}
+        {videos.map(
+          (video) => (
+          <Video
+            url= {video.url}
+            channel= {video.channel}
+            song= {video.song}
+            likes= {0}
+            messages= {video.messages}
+            description= {video.description}
+            shares= {video.shares}
+           />
+        ))
+        }
+    </div>
     </div>
   );
 }

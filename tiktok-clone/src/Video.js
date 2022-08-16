@@ -26,7 +26,7 @@ function Video({url, channel, description, song, likes, messages, shares}) {
             loop
             ref={videoRef}
             >
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-model-girl-posing-on-a-white-background-34428-large.mp4" type="video/mp4" />
+            <source src={url} type="video/mp4" />
         </video>
 
         {/* Video Footer */}

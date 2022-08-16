@@ -3,14 +3,21 @@ import mongoose from "mongoose";
 
 import data from "./data.js";
 import Videos from "./dbModel.js";
+import Cors from "cors";
 
 // app config
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 
 // middlewares
 app.use(express.json())
+app.use(Cors())
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Origin', '*'),
+//     res.setHeader('Access-Control-Headers', '*'),
+//     next();
+// })
 
 // DB config
 const connection_url = 'mongodb+srv://admin:8zXAHvbaW51ckpss@cluster0.yei5ij6.mongodb.net/?retryWrites=true&w=majority';
