@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__videos">
-        <Video url='"./short.mp4"'
+        <Video url='"https://assets.mixkit.co/videos/preview/mixkit-model-girl-posing-on-a-white-background-34428-large.mp4"'
         channel={"Testing 123"}
         description={"Testing 123"}
         song={"Testing 123"}

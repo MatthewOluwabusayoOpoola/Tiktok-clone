@@ -25,7 +25,8 @@ function Video({url, channel, description, song, likes, messages, shares}) {
             className="video__player"
             loop
             ref={videoRef}
-            src={url}>
+            >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-model-girl-posing-on-a-white-background-34428-large.mp4" type="video/mp4" />
         </video>
 
         {/* Video Footer */}
